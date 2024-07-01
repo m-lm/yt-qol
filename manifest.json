@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "yt-qol",
+    "version": "1.0",
+  
+    "description": "Adds quality of life features to YouTube, including loop sections, watch later cleaning, and zen mode.",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "yt-qol@example.com"
+        }
+    },
+  
+    "icons": {
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/playlist?list=WL"],
+        "js": ["cleanlist.js"]
+      },
+      {
+        "matches": ["*://*.youtube.com/watch?v=*"],
+        "js": ["zenmode.js", "vidfrag.js"]
+      }
+
+    ]
+  }
+  
